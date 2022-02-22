@@ -21,7 +21,7 @@ def main():
     while flag:
         today = datetime.now().weekday()
         if today==config['DOP']:
-            for i in range(1, config['NOW']*7+1):
+            for i in range(config['NOW']*7):
                 tarYear  = '%04d'%convert.convert(i).outPreDaybyDate()[0]
                 tarDay   = '%03d'%convert.convert(i).outPreDaybyDate()[1]
                 savePath = '{}{}{}{}{}'.format(
