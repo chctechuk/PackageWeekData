@@ -15,14 +15,12 @@ class convert():
             the number of daily files left in folder.
         """
         self.cycleDays = cycleDays
-    
-    def now(self):
-        return datetime.now()
+        self.now       = datetime.now()
     
     def outDaybyDate(self):
-        year   = self.now().year
-        month  = self.now().month
-        day    = self.now().day
+        year   = self.now.year
+        month  = self.now.month
+        day    = self.now.day
         months = [0,31,59,90,120,151,181,212,243,273,304,334]
         if 0 < month <= 12:
             sumn = months[month-1]
@@ -37,9 +35,9 @@ class convert():
         return year, sumn
     
     def outPreDaybyDate(self):
-        year   = (self.now() - timedelta(days=self.cycleDays + 1)).year
-        month  = (self.now() - timedelta(days=self.cycleDays + 1)).month
-        day    = (self.now() - timedelta(days=self.cycleDays + 1)).day
+        year   = (self.now - timedelta(days=self.cycleDays + 1)).year
+        month  = (self.now - timedelta(days=self.cycleDays + 1)).month
+        day    = (self.now - timedelta(days=self.cycleDays + 1)).day
         months = [0,31,59,90,120,151,181,212,243,273,304,334]
         if 0 < month <= 12:
             sumn = months[month-1]
